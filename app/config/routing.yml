@@ -1,3 +1,8 @@
+rock_paper_scissors_lizard_spock:
+    resource: "@RockPaperScissorsLizardSpockBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
