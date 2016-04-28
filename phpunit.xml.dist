@@ -14,7 +14,7 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>src/RockPaperScissorsLizardSpockBundle/Tests</directory>
+            <directory>src/JoshWillis/RockPaperScissorsLizardSpockBundle/Tests</directory>
         </testsuite>
     </testsuites>
 

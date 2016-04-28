@@ -1,6 +1,6 @@
 <?php
 
-namespace RockPaperScissorsLizardSpockBundle;
+namespace JoshWillis\RockPaperScissorsLizardSpockBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

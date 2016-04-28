@@ -1,6 +1,6 @@
 <?php
 
-namespace RockPaperScissorsLizardSpockBundle\Controller;
+namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

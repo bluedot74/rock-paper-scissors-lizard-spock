@@ -1,5 +1,5 @@
 <?php
-namespace RockPaperScissorsLizardSpockBundle\Tests;
+namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Tests;
 
 
 class GameTest extends \PHPUnit_Framework_TestCase
