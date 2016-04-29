@@ -15,13 +15,20 @@ use JoshWillis\RockPaperScissorsLizardSpockBundle\Outcomes\Win;
 /**
  * Class Game
  * @package JoshWillis\RockPaperScissorsLizardSpockBundle
- * The game class takes two players and pits their characters against each other then compiles and returns the outcome.
+ * The game class takes two players and pits their characters against each other then returns an Outcome object.
+ * If a second player is not passed it is automatically generated and the character randomly chosen.
  *
  */
 class Game
 {
+    /**
+     * @var Player
+     */
     private $player;
 
+    /**
+     * @var Character[]
+     */
     public static $available_characters = [
         Lizard::class,
         Paper::class,
@@ -30,6 +37,9 @@ class Game
         Scissors::class
     ];
 
+    /**
+     * @var string
+     */
     private $computer_name = "Computer";
 
     /**
@@ -49,7 +59,9 @@ class Game
     }
 
 
-
+    /**
+     * @return Draw|Lose|Win
+     */
     public function getOutcome(){
 
         $computer = $this->getComputerPlayer();
@@ -73,7 +85,7 @@ class Game
     /**
      * @param Player $winner
      * @param Player $loser
-     * @param $hits
+     * @param Action[] $hits
      * @return string
      * Creates and returns a string describing the outcome of the game.
      */
@@ -96,7 +108,7 @@ class Game
     /**
      * @param Player $player
      * @param Player $opponent
-     * @return boolean
+     * @return Action[]
      * Returns an array of intersecting abilities to weaknesses of two players
      */
     public function fight(Player $player, Player $opponent){
@@ -105,7 +117,7 @@ class Game
 
     /**
      * @return Player
-     * Returns the Computer player. If one was passed into the constructor return it, otherwise generate a random one.
+     * Returns the Computer Player. If one was passed into the constructor return it, otherwise generate a random one.
      */
     public function getComputerPlayer(){
 
@@ -122,7 +134,7 @@ class Game
 
     /**
      * @return Character
-     * Grabs, instantiates and returns a random Character class.
+     * Grabs, instantiates and returns a random Character object.
      */
     private function getRandomCharacter(){
 
@@ -133,6 +145,9 @@ class Game
         return new $character_class;
     }
 
+    /**
+     * @return Character[]
+     */
     public static function getAvailableCharacters(){
 
         $characters = [];

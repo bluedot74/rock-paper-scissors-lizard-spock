@@ -10,6 +10,11 @@ use JoshWillis\RockPaperScissorsLizardSpockBundle\Actions\Action;
  */
 abstract class Character {
 
+    /**
+     * @param $name
+     * @return Character
+     * Takes the name of a character and returns the character Object
+     */
     public static function getCharacterByName($name){
         $character_class = "JoshWillis\\RockPaperScissorsLizardSpockBundle\\Characters\\".$name;
 
