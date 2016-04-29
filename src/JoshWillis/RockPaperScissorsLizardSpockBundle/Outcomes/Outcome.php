@@ -16,6 +16,15 @@ abstract class Outcome
      */
     public $description;
 
+    /**
+     * Outcome constructor.
+     * @param string $description
+     */
+    public function __construct($description = null)
+    {
+        $this->description = $description;
+    }
+
     abstract function getOutcomeName();
 
 

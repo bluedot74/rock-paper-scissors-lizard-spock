@@ -22,7 +22,7 @@ class Game
 {
     private $player;
 
-    private $available_characters = [
+    public static $available_characters = [
         Lizard::class,
         Paper::class,
         Rock::class,
@@ -65,7 +65,7 @@ class Game
         }
 
         // Neither player has hits against the other, return a Draw
-        return new Draw;
+        return new Draw($this->getHitDescription($computer,$this->player));
 
 
     }
@@ -77,15 +77,19 @@ class Game
      * @return string
      * Creates and returns a string describing the outcome of the game.
      */
-    public function getHitDescription(Player $winner, Player $loser, $hits){
+    public function getHitDescription(Player $winner, Player $loser, $hits = null){
 
-        // Assume only one hit.
-        $hit = array_shift($hits);
+        if($hits) {
+            // Assume only one hit.
+            $hit = array_shift($hits);
 
-        /** @var Action $action */
-        $action = new $hit;
+            /** @var Action $action */
+            $action = new $hit;
 
-        return $winner->name.'\'s '.$winner->character->getName()." ".$action->getVerb()." ".$loser->name.'\'s '.$loser->character->getName();
+            return $winner->name . '\'s ' . $winner->character->getName() . " " . $action->getVerb() . " " . $loser->name . '\'s ' . $loser->character->getName();
+        }
+
+        return $winner->name . '\'s ' . $winner->character->getName() . " and " . $loser->name . '\'s ' . $loser->character->getName(). "flailed widely at each other, but it wasn't very effective.";
 
     }
 
@@ -120,11 +124,22 @@ class Game
      */
     private function getRandomCharacter(){
 
-        $random_key = array_rand($this->available_characters);
+        $random_key = array_rand(Game::$available_characters);
 
-        $character_class = $this->available_characters[$random_key];
+        $character_class = Game::$available_characters[$random_key];
 
         return new $character_class;
+    }
+
+    public static function getAvailableCharacters(){
+
+        $characters = [];
+
+        foreach(Game::$available_characters as $available_character){
+            $characters[] = new $available_character;
+        }
+
+        return $characters;
     }
 
 
