@@ -1,8 +1,8 @@
-<?php namespace JoshWillis\RockPaperScissorsBundle\Actions;
+<?php namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Actions;
 
 /**
  * Class Cut
- * @package JoshWillis\RockPaperScissorsBundle\Actions
+ * @package JoshWillis\RockPaperScissorsLizardSpockBundle\Actions
  */
 class Cut extends Action
 {

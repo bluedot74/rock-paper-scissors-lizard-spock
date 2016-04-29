@@ -2,15 +2,15 @@
 namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Outcomes;
 
 /**
- * Class Win
+ * Class Lose
  * @package JoshWillis\RockPaperScissorsLizardSpockBundle\Outcomes
- * This occurs when the player wins against the computer
+ * This outcome occurs when the player loses to the computer.
  */
-class Win extends Outcome
+class Draw extends Outcome
 {
 
     function getOutcomeName()
     {
-        Return "Win!";
+        return "Draw";
     }
 }

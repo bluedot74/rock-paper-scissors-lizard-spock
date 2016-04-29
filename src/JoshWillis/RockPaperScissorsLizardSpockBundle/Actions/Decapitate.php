@@ -1,8 +1,8 @@
-<?php namespace JoshWillis\RockPaperScissorsBundle\Actions;
+<?php namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Actions;
 
 /**
  * Class Decapitate
- * @package JoshWillis\RockPaperScissorsBundle\Actions
+ * @package JoshWillis\RockPaperScissorsLizardSpockBundle\Actions
  */
 class Decapitate extends Action
 {

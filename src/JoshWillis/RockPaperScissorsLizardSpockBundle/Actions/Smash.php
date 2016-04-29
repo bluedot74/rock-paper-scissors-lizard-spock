@@ -1,8 +1,8 @@
-<?php namespace JoshWillis\RockPaperScissorsBundle\Actions;
+<?php namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Actions;
 
 /**
  * Class Smash
- * @package JoshWillis\RockPaperScissorsBundle\Actions
+ * @package JoshWillis\RockPaperScissorsLizardSpockBundle\Actions
  */
 class Smash extends Action
 {

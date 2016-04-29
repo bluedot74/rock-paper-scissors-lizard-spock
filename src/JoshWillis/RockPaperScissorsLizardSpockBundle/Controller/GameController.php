@@ -2,11 +2,13 @@
 
 namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Controller;
 
+use JoshWillis\RockPaperScissorsLizardSpockBundle\Characters\Spock;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class GameController extends Controller
 {
     /**
      * @Route("/")
@@ -14,7 +16,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('RockPaperScissorsLizardSpockBundle:Game:index.html.twig');
+        return $this->render('JoshWillisRockPaperScissorsLizardSpockBundle:Game:index.html.twig');
     }
 
 
@@ -27,6 +29,6 @@ class DefaultController extends Controller
     public function resolveGameAction(Request $request)
     {
 
-        return $this->render('RockPaperScissorsLizardSpockBundle:Game:resolve.html.twig');
+        return $this->render('JoshWillisRockPaperScissorsLizardSpockBundle:Game:resolve.html.twig');
     }
 }
