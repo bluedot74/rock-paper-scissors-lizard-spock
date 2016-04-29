@@ -11,6 +11,6 @@ class Win extends Outcome
 
     function getOutcomeName()
     {
-        Return "Win!";
+        Return "Win";
     }
 }

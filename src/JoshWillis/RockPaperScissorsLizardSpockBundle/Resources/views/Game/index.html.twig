@@ -21,5 +21,28 @@
     {% endfor %}
 </form>
 
+<h2>Statistics</h2>
+<h3>Win / Loss / Draw </h3>
+
+<ul>
+    {% for c in statistics.win_loss_counts %}
+        <li>{{ c.win_loss_draw_count}} {{ c.outcome }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Player's Characters</h3>
+<ul>
+    {% for c in statistics.player_characters %}
+    <li>{{ c.times_used}} {{ c.player_character }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Computers's Characters</h3>
+<ul>
+    {% for c in statistics.computer_characters %}
+        <li>{{ c.times_used}} {{ c.player_character }}</li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>

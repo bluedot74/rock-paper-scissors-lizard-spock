@@ -107,14 +107,16 @@ class Game
      * @return Player
      * Returns the Computer player. If one was passed into the constructor return it, otherwise generate a random one.
      */
-    private function getComputerPlayer(){
+    public function getComputerPlayer(){
 
         if($this->computer)
             return $this->computer;
 
         $character = $this->getRandomCharacter();
 
-        return new Player($character,$this->computer_name);
+        $this->computer = new Player($character,$this->computer_name);;
+
+        return $this->computer;
 
     }
 
