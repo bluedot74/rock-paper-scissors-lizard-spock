@@ -12,6 +12,6 @@ abstract class Action {
     /**
      * @return string
      */
-    abstract function getVerb();
+    abstract public function getVerb();
 
 }
