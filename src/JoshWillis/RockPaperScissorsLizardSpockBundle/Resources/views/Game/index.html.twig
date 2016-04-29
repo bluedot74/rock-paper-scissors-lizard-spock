@@ -6,9 +6,16 @@
 </head>
 <body>
 <h2>Welcome</h2>
-<p>Please select a character to play: </p>
 
-<form method="POST" action="{{ path('game_resolve') }}">
+{% if(outcome) %}
+<h2>{{ outcome.getOutcomeName() }}</h2>
+<p>{{ outcome.description }}</p>
+<p>Please select a character to play again: </p>
+{% else %}
+<p>Please select a character to play: </p>
+{% endif %}
+
+<form method="POST" action="{{ path('game') }}">
     {% for character in characters %}
     <button type="submit" name="character" value="{{ character.getName() }}">{{ character.getName() }}</button>
     {% endfor %}

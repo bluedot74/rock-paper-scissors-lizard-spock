@@ -89,7 +89,7 @@ class Game
             return $winner->name . '\'s ' . $winner->character->getName() . " " . $action->getVerb() . " " . $loser->name . '\'s ' . $loser->character->getName();
         }
 
-        return $winner->name . '\'s ' . $winner->character->getName() . " and " . $loser->name . '\'s ' . $loser->character->getName(). "flailed widely at each other, but it wasn't very effective.";
+        return $winner->name . '\'s ' . $winner->character->getName() . " and " . $loser->name . '\'s ' . $loser->character->getName(). " flailed widely at each other, but it wasn't very effective.";
 
     }
 

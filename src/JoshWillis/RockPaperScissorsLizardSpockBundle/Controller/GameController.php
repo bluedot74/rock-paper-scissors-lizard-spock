@@ -16,32 +16,27 @@ class GameController extends Controller
 {
     /**
      * @Route("/", name="game")
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function indexAction()
-    {
-        $characters = Game::getAvailableCharacters();
-
-        return $this->render('JoshWillisRockPaperScissorsLizardSpockBundle:Game:index.html.twig',array('characters' => $characters));
-    }
-
-
-    /**
-     * @Route("/resolve",name="game_resolve")
-     * @Method({"POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function resolveGameAction(Request $request)
+    public function indexAction(Request $request)
     {
-        $player_character = Character::getCharacterByName($request->request->get('character'));
+        $characters = Game::getAvailableCharacters();
 
-        $player = new Player($player_character,'Player');
+        $outcome = null;
+        if($request->getMethod() == "POST") {
+            $player_character = Character::getCharacterByName($request->request->get('character'));
 
-        $game = new Game($player);
+            $player = new Player($player_character, 'Player');
 
-        $outcome = $game->getOutcome();
+            $game = new Game($player);
 
-        return $this->render('JoshWillisRockPaperScissorsLizardSpockBundle:Game:resolve.html.twig', array('outcome' => $outcome));
+            $outcome = $game->getOutcome();
+        }
+
+
+        return $this->render('JoshWillisRockPaperScissorsLizardSpockBundle:Game:index.html.twig',array('characters' => $characters, 'outcome' => $outcome));
     }
+
+
 }
