@@ -1,11 +1,10 @@
 <?php
 namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Outcomes;
 
-use JoshWillis\RockPaperScissorsLizardSpockBundle\Actions\Action;
-
 /**
  * Class Outcome
  * @package JoshWillis\RockPaperScissorsLizardSpockBundle
+ * The Outcome classes describe each possible outcome and provide a standardized api for the frontend to display the results.
  */
 abstract class Outcome
 {

@@ -6,13 +6,19 @@ use JoshWillis\RockPaperScissorsLizardSpockBundle\Characters\Character;
 /**
  * Class Player
  * @package JoshWillis\RockPaperScissorsLizardSpockBundle
- * The player class stores an identifier for a player, and the player's selected character.
+ * The player class stores an identifier for a player (name), and the player's selected Character.
  */
 class Player
 {
 
+    /**
+     * @var Character
+     */
     public $character;
 
+    /**
+     * @var string
+     */
     public $name;
 
     /**

@@ -8,7 +8,7 @@ use JoshWillis\RockPaperScissorsLizardSpockBundle\Actions\Action;
  * @package JoshWillis\RockPaperScissorsLizardSpockBundle\Characters
  * Each character contains an array of Actions they perform ($actions) and Actions they are weak to ($weaknesses)
  */
-abstract class Character implements CharacterInterface {
+abstract class Character {
 
     public static function getCharacterByName($name){
         $character_class = "JoshWillis\\RockPaperScissorsLizardSpockBundle\\Characters\\".$name;

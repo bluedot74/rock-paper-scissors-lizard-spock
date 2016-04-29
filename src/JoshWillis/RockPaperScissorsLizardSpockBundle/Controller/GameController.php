@@ -2,12 +2,9 @@
 
 namespace JoshWillis\RockPaperScissorsLizardSpockBundle\Controller;
 
-use Doctrine\ORM\EntityRepository;
 use JoshWillis\RockPaperScissorsLizardSpockBundle\Characters\Character;
-use JoshWillis\RockPaperScissorsLizardSpockBundle\Characters\Spock;
 use JoshWillis\RockPaperScissorsLizardSpockBundle\Game;
 use JoshWillis\RockPaperScissorsLizardSpockBundle\Player;
-use JoshWillis\RockPaperScissorsLizardSpockBundle\Repository\GameRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
